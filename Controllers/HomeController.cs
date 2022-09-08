@@ -12,14 +12,15 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-
+    [HttpGet]
     public IActionResult Index()
     {
         return View();
     }
-
-    public IActionResult Privacy()
+    [HttpPost]
+    public IActionResult Index(String FullName,string Email)
     {
+        ViewBag.name = "Hello" + FullName + "-" + Email;
         return View();
     }
 
