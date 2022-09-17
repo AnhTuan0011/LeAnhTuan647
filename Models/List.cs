@@ -1,10 +1,10 @@
 namespace LeAnhTuanBTH.Models
 {
-    public class Student
+    public class List
     {
         //các phuong thuc hoac thuoc tinh
         public int  StudentID { get; set; }
-        public string StudentName { get; set; }
-        public int StudentAge { get; set; }
+        public char StudentName { get; set; }
+        public int Age { get; set; }
     }
-}
+} 

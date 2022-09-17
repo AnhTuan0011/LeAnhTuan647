@@ -4,4 +4,28 @@
 
 <h2>Index</h2>
 
-<p>Hello from our View Template!</p>
+<p>Hello from our View Template!</p> 
+
+<h2>DANH SÁCH SINH VIÊN</h2>
+<hr>
+<table class="table border">
+     <tr>
+          <th>
+               <label>Ma Sinh Vien</label>
+          </th>
+          <th>
+               <label>Ten Sinh Vien</label>
+          </th>
+          <th>
+               <label>Tuoi</label>
+          </th>
+     </tr>
+     @foreach (var item in ViewData["Students"] as List<Student>)
+     {
+          <tr>
+               <td>@item.StudentID</td>
+               <td>@item.StudentName</td>
+               <td>@item.StudentAge</td>
+          </tr>
+     }
+</table>

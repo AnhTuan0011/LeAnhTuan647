@@ -1,20 +1,16 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using LeAnhTuanBTH.Models;
+using LeAnhTuanBTH.Controllers;
+
 
 namespace LeAnhTuanBTH.Controllers;
-
-public class HomeController : Controller
+public class StudentController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-    [HttpGet]
     public IActionResult Index()
     {
+        //khoi toa list studen
         List<Student> stdList = new List<Student>()
         {
             new Student {StudentID = 1, StudentName = "Nguyen Van A", StudentAge = 18},
@@ -27,15 +23,12 @@ public class HomeController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Index(String FullName,string Email)
+    public IActionResult Create(Student std)
     {
-        ViewBag.name = "Hello" + FullName + "-" + Email;
+        //string message = std.Student + "-";
+        //message += std.StudentName + "-";
+        //message += std.Age;
+        //ViewBag.TT = message;
         return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
