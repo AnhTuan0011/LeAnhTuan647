@@ -25,5 +25,17 @@ namespace LeAnhTuanBTH.Controllers
             ViewBag.abc = mess;
             return View();
         }
+        [HttpPost]
+
+        public IActionResult Create(string heSoA, string heSoB, string heSoC)
+        {
+            // ep kieu du lieu cua tham so
+            double a = Convert.ToDouble(heSoA);
+            double b = Convert.ToDouble(heSoB);
+            double c = Convert.ToDouble(heSoC);
+            string thongBao = gpt.GiaiPhuongTrinhBacHai(a, b, c);
+            ViewBag.mess = thongBao;
+            return View();
+        }
     }
 }
